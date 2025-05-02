@@ -7,55 +7,47 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About inventory-system
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Inventory Management System (Diploma Final Year Project)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
+- [Project Overview](#project-overview)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Database Schema](#database-schema)  
+- [Installation & Setup](#installation--setup)  
+- [Usage](#usage)  
+- [User Roles & Permissions](#user-roles--permissions)  
+- [Folder Structure](#folder-structure)  
+- [Testing](#testing)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Project Overview  
+This Inventory Management System is my diploma final‑year project, built with Laravel. It enables an organization to track, allocate, and audit hardware assets—such as computers, printers, archived or returned devices—across multiple locations. The system features a relational database schema, Eloquent models, RESTful controllers, Blade views, responsive UI/UX enhancements, and automated tests to ensure reliability. It demonstrates proficiency in database design, MVC architecture, Laravel development, and software testing.
 
-## Learning Laravel
+## Features  
+- **Asset Tracking**: Create, read, update, delete (CRUD) operations for devices and locations.  
+- **Assignments & History**: Record which user a device is assigned to, location history, and archived/returned status.  
+- **Role‑Based Access Control**: Three roles—Super‑Admin (full access), Admin (most actions), Visitor (read‑only, report printing).  
+- **Responsive UI**: Mobile‑friendly layouts, alerts, and status indicators.  
+- **Automated Testing**: Unit, feature, and integration tests via PHPUnit/Pest.  
+- **Reporting**: Export device lists and assignment history as PDF/CSV.  
+- **Scheduler**: Automated daily summary reports using Laravel’s task scheduler.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tech Stack  
+- **Framework**: Laravel 10 (PHP 8)  
+- **Frontend**: Blade templates, Tailwind CSS (or Bootstrap)  
+- **Database**: MySQL (or MariaDB)  
+- **Authentication**: Laravel Breeze  
+- **Testing**: PHPUnit / Pest  
+- **Version Control**: Git & GitHub  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Database Schema  
+- **Devices**: `id, name, serial_number, status, location_id, assigned_to, archived_at, created_at, updated_at`  
+- **Users**: `id, name, email, password, role_id, created_at, updated_at`  
+- **Roles**: `id, name` (super‑admin, admin, visitor)  
+- **Locations**: `id, name, description`  
+- **Assignments** (pivot): `id, device_id, user_id, assigned_at, returned_at`  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
