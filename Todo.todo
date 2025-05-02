@@ -1,0 +1,124 @@
+## Daily Task Breakdown
+
+| Day | Date         | Phase                        | Task                                                                                           |
+| --- | ------------ | ---------------------------- | ---------------------------------------------------------------------------------------------- |
+| 1   | May 3, 2025  | DB Design                    | Draft entities & relationships; create ERD; review with team                                   |
+| 2   | May 4, 2025  | DB Design                    | Normalize schema; define PK/FK; prepare migration plan                                         |
+| 3   | May 5, 2025  | Models & Migrations          | Scaffold Laravel project; create migration files for each table; run initial migrations        |
+| 4   | May 6, 2025  | Models & Migrations          | Implement Eloquent models; add relationships and fillable rules; refine migrations             |
+| 5   | May 7, 2025  | Controllers & Routing        | Generate resource controllers; outline methods (index, show, create, update, destroy)          |
+| 6   | May 8, 2025  | Controllers & Routing        | Move business logic into services; apply “skinny controllers” pattern; secure with middleware  |
+| 7   | May 9, 2025  | Controllers & Routing        | Group and name routes; apply role‑based middleware; test endpoints with Postman                |
+| 8   | May 10, 2025 | Views                        | Set up main Blade layout & components; organize view folders per feature                       |
+| 9   | May 11, 2025 | Views                        | Build CRUD views for devices (list, detail, form); wire to controllers                         |
+| 10  | May 12, 2025 | UI/UX Improvements           | Apply responsive design, navigation UX; integrate alerts and status indicators                 |
+| 11  | May 13, 2025 | UI/UX & Auth                 | Implement authentication/roles (super‑admin, admin, visitor) with Breeze; restrict views       |
+| 12  | May 14, 2025 | Testing                      | Scaffold PHPUnit/Pest; write unit tests for models and services                                |
+| 13  | May 15, 2025 | Testing                      | Write feature tests for controllers & routes; assert database changes                          |
+| 14  | May 16, 2025 | Testing                      | Add integration tests for user flows (login, device assignment, report generation)             |
+| 15  | May 17, 2025 | Iteration & Bug‑fixing       | Triage issues from testing; optimize queries; finalize reporting feature                       |
+| 16  | May 18, 2025 | Deployment Prep & Scheduling | Configure scheduler for reports; prepare deployment scripts; set up cron via Laravel scheduler |
+| 17  | May 19, 2025 | Buffer & Launch              | Final QA, stakeholder walkthrough, launch to production                                        |
+
+---
+
+### Days 1–2: Database Design
+
+**Day 1 (May 3)**
+
+* Identify all entities (devices, users, roles, assignments, locations, archives).
+* Draw an ERD in a tool like draw\.io; include cardinalities (1‑to‑many for users→devices) ([Web Development & Programming Tutorials][2]).
+* Review requirements for archived/returned devices.
+
+**Day 2 (May 4)**
+
+* Normalize tables to 3NF; eliminate redundancy ([CMARIX][1]).
+* Define primary/foreign keys, pivot tables for many‑to‑many (e.g., devices↔locations).
+* Draft migration plan: one migration per table, descriptive names ([ClickySoft][3]).
+
+### Days 3–4: Models & Migrations
+
+**Day 3 (May 5)**
+
+* `composer create-project laravel/laravel inventory-system` to scaffold.
+* Create migrations: `php artisan make:migration create_devices_table` etc.; run `php artisan migrate` ([Cloudways][4]).
+
+**Day 4 (May 6)**
+
+* Build Eloquent models; define `$fillable`, casts, relationships (hasMany, belongsTo) ([Medium][5]).
+* Refine migrations: add indexes, constraints, soft‑deletes.
+* Seed initial roles via a RoleSeeder.
+
+### Days 5–7: Controllers & Routing
+
+**Day 5 (May 7)**
+
+* Generate resource controllers: `php artisan make:controller DeviceController --resource` for each model.
+* Stub out index/show/create/update/destroy methods.
+
+**Day 6 (May 8)**
+
+* Extract business logic into Service classes for assignments and reports (skinny controllers) ([DEV Community][6]).
+* Validate via FormRequests, authorize via Policies.
+
+**Day 7 (May 9)**
+
+* Organize routes in `routes/web.php` using groups, prefixes, names ([Medium][7]).
+* Attach role‑middleware (`superadmin`, `admin`, `visitor`) to route groups.
+* Manual test endpoints with Postman.
+
+### Days 8–9: Views
+
+**Day 8 (May 10)**
+
+* Create master layout in `resources/views/layouts/app.blade.php`; define nav, footer ([Laravel][8]).
+* Build reusable Blade components (alerts, tables).
+
+**Day 9 (May 11)**
+
+* Develop device CRUD views (index, form, detail) under `views/devices/`.
+* Use Blade directives, loops, and includes for DRY structure ([Medium][9]).
+
+### Days 10–11: UI/UX & Auth
+
+**Day 10 (May 12)**
+
+* Apply responsive grid (Tailwind or Bootstrap), ensure usability on mobile.
+* Add flash notifications, loading indicators, error highlights ([Medium][10]).
+
+**Day 11 (May 13)**
+
+* Install Laravel Breeze for auth scaffolding; set up roles in registration flow ([Laravel Daily][11]).
+* Restrict pages: super‑admin full, admin limited, visitor read‑only.
+
+### Days 12–14: Testing
+
+**Day 12 (May 14)**
+
+* Configure PHPUnit/Pest; create tests directory structure (Unit, Feature).
+* Write unit tests for models and services.  ([WPWeb Infotech][12]).
+
+**Day 13 (May 15)**
+
+* Write feature tests for controller actions: device creation, assignment, report generation ([Laracasts][13]).
+
+**Day 14 (May 16)**
+
+* Write integration tests covering user login → view → print report flow ([Laravel][14]).
+
+### Days 15–17: Iteration, Deployment & Buffer
+
+**Day 15 (May 17)**
+
+* Fix bugs surfaced by tests; optimize N+1 queries with eager loading.
+* Finalize report export (PDF/CSV).
+
+**Day 16 (May 18)**
+
+* Set up task scheduler in `app/Console/Kernel.php` for daily summaries ([Laravel][15]).
+* Write deployment scripts (Envoyer, Forge, or GitHub Actions).
+
+**Day 17 (May 19)**
+
+* Buffer: final QA, stakeholder demo, document the system, deploy to production.
+
