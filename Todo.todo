@@ -2,7 +2,7 @@
 
 | Day | Date         | Phase                        | Task                                                                                           |
 | --- | ------------ | ---------------------------- | ---------------------------------------------------------------------------------------------- |
-| 1   | May 3, 2025  | DB Design                    | Draft entities & relationships; create ERD; review with team                                   |
+| 1   | May 3, 2025  | DB Design ✔                  | Draft entities & relationships; create ERD; review with team                                   |
 | 2   | May 4, 2025  | DB Design                    | Normalize schema; define PK/FK; prepare migration plan                                         |
 | 3   | May 5, 2025  | Models & Migrations          | Scaffold Laravel project; create migration files for each table; run initial migrations        |
 | 4   | May 6, 2025  | Models & Migrations          | Implement Eloquent models; add relationships and fillable rules; refine migrations             |
