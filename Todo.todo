@@ -27,13 +27,8 @@
 **Day 1 (May 3)**
 
 * Identify all entities (devices, users, roles, assignments, locations, archives).
-* Draw an ERD in a tool like draw\.io; include cardinalities (1‑to‑many for users→devices) ([Web Development & Programming Tutorials][2]).
+* Draw an ERD in a tool like draw\.io; include cardinalities (1‑to‑many for users→devices).
 * Review requirements for archived/returned devices.
-
-
-Perfect. I’ll map out the full database structure for your Laravel inventory system, including entities, relationships, and an ERD diagram you can import into Draw\.io. I’ll also review how to handle returned and archived devices in the schema.
-
-I’ll get back to you shortly with all the details.
 
 
 # Database Schema for Laravel Inventory System
@@ -93,14 +88,20 @@ When a device is **returned** (e.g. a user brings it back for maintenance), we u
 
 For **archiving** (soft-deleting) a device, we mark it as archived and record metadata. In Laravel this is done by setting the device’s `deleted_at` timestamp rather than deleting the row. We also set its current state to “archived” and insert a record into `device_archives` with `archived_by` and `reason`. This acts like a “recycle bin”: the device remains in the database (and can be restored if needed), but is flagged as inactive.  Soft deletes let us retain full history – Laravel’s Eloquent will ignore “deleted” devices by default but we can restore or audit them as needed.
 
-In summary, returned devices generate state-history entries and assignment updates, while archived devices use a soft-delete flag plus an archive-log table. Using these tables and foreign keys ensures we fully track every assignment and status change. The schema tables above and the ERD outline all keys and relationships needed for easy Laravel migration/mode implementation.
-
-**Sources:** We follow Laravel best practices for timestamps and soft deletes, and standard RBAC schema patterns. These ensure a robust audit trail and clear relations between users, devices, and locations.
-
 
 **Day 2 (May 4)**
 
 * Normalize tables to 3NF; eliminate redundancy ([CMARIX][1]).
+
+| Concept                         | Wrong Example 🧟‍♂️                                    | Right Example 💎                 |
+| ------------------------------- | --------------------------------------------------- | -------------------------------- |
+| **Atomic values (1NF)**         | One field has multiple emails (`a,b,c`)             | Split into `user_emails` table   |
+| **Repeating groups (1NF)**      | One table with product1, product2, product3 columns | Break into rows in a child table |
+| **Partial dependency (2NF)**    | `role_name` in a composite key table                | Move to separate `roles` table   |
+| **Composite Key**               | A key made of multiple columns                      | `role_user (user_id, role_id)`   |
+| **Transitive dependency (3NF)** | `state_name` depending on `state_id`                | Move to `device_states` table    |
+
+
 * Define primary/foreign keys, pivot tables for many‑to‑many (e.g., devices↔locations).
 * Draft migration plan: one migration per table, descriptive names ([ClickySoft][3]).
 
