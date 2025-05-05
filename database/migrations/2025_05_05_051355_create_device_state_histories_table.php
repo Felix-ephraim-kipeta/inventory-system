@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('from_state_id'); //(FK → device_states.id)
             $table->integer('to_state_id'); //(FK → device_states.id)
             $table->integer('changed_by'); //(FK → users.id)
-            $table->string('note'); //nullable
+            $table->string('note')->nullable(); 
             $table->timestamp('changed_at');
             $table->timestamps();
         });

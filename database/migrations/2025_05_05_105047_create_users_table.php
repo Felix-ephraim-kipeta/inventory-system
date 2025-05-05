@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('identifier')->unique();
-            $table->integer('state_id'); //FK device_state.id
-            $table->timestamp('deleted_at')->nullable();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->timestamp('deleted_at');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('users');
     }
 };

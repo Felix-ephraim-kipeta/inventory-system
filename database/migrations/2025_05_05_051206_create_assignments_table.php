@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ssignments', function (Blueprint $table) {
+        Schema::create('assignments', function (Blueprint $table) {
             $table->id();
             $table->integer('device_id'); //(FK → devices.id)
-            $table->integer('user_id'); //(nullable FK → users.id)
-            $table->integer('location_id'); //(nullable FK → locations.id)
+            $table->integer('user_id')->nullable(); // FK → users.id)
+            $table->integer('location_id')->nullable(); // FK → locations.id)
             $table->string('assigned_by');//(FK → users.id)` 
             $table->timestamp('assigned_at');
-            $table->timestamp('returned_at');//nullable
+            $table->timestamp('returned_at')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ssignments');
+        Schema::dropIfExists('assignments');
     }
 };
