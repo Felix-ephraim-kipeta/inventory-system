@@ -9,4 +9,9 @@ class location extends Model
 {
     /** @use HasFactory<\Database\Factories\LocationFactory> */
     use HasFactory;
+
+    public function assignments()
+    {
+        return $this->hasMany(assignments::class);
+    }
 }

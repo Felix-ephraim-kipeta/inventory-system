@@ -5,7 +5,7 @@
 | 1   | May 3, 2025  | DB Design ✔                  | Draft entities & relationships; create ERD; review with team                                   |
 | 2   | May 4, 2025  | DB Design ✔                  | Normalize schema; define PK/FK; prepare migration plan                                         |
 | 3   | May 5, 2025  | Models & Migrations ✔        | Scaffold Laravel project; create migration files for each table; run initial migrations        |
-| 4   | May 6, 2025  | Models & Migrations          | Implement Eloquent models; add relationships and fillable rules; refine migrations             |
+| 4   | May 6, 2025  | Models & Migrations  ✔       | Implement Eloquent models; add relationships and fillable rules; refine migrations             |
 | 5   | May 7, 2025  | Controllers & Routing        | Generate resource controllers; outline methods (index, show, create, update, destroy)          |
 | 6   | May 8, 2025  | Controllers & Routing        | Move business logic into services; apply “skinny controllers” pattern; secure with middleware  |
 | 7   | May 9, 2025  | Controllers & Routing        | Group and name routes; apply role‑based middleware; test endpoints with Postman                |
