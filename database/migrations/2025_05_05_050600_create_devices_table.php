@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('identifier')->unique();
-            $table->integer('state_id'); //FK device_state.id
+            $table->unsignedBigInteger('state_id'); //FK device_state.id
+            $table->foreign('state_id')->references('id')->on('device_states')->onDelete('cascade');
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });

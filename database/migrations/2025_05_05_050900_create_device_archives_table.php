@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('device_archives', function (Blueprint $table) {
             $table->id();
-            $table->string('device_id'); //(FK → devices.id)
-            $table->string('archived_by'); //(FK → users.id)
+            $table->unsignedBigInteger('device_id'); //(FK → devices.id)
+            $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
+            $table->unsignedBigInteger('archived_by'); //(FK → users.id)
+            $table->foreign('archived_by')->references('id')->on('users')->onDelete('cascade');
             $table->string('device_description');
             $table->timestamps();
         });
