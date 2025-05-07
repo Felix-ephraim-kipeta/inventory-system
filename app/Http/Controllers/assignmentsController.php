@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoressignmentsRequest;
 use App\Http\Requests\UpdatessignmentsRequest;
-use App\Models\ssignments;
+use App\Models\assignments;
 
-class SsignmentsController extends Controller
+class assignmentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class SsignmentsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ssignments $ssignments)
+    public function show(assignments $assignments)
     {
         //
     }
@@ -43,7 +43,7 @@ class SsignmentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ssignments $ssignments)
+    public function edit(assignments $assignments)
     {
         //
     }
@@ -51,7 +51,7 @@ class SsignmentsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatessignmentsRequest $request, ssignments $ssignments)
+    public function update(UpdatessignmentsRequest $request, assignments $assignments)
     {
         //
     }
@@ -59,7 +59,7 @@ class SsignmentsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ssignments $ssignments)
+    public function destroy(assignments $assignments)
     {
         //
     }
