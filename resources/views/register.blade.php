@@ -2,7 +2,7 @@
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-sidebar">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       {{-- image here mu/logo--}}
-      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-textlight">Sign in to your account</h2>
+      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-textlight">Sign up</h2>
     </div>
   
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="mt-2">
-            <input type="password" name="password" id="password" autocomplete="current-password" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-textlight outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            <input type="password" name="password" id="password" autocomplete="current-password" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-textlight  focus:outline-indigo-600 sm:text-sm/6">
           </div>
         </div>
   
