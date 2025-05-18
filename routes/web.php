@@ -26,7 +26,7 @@ Route::get('/register',[
 
 Route::post('/logout', [
     AuthController::class, 
-    'login'
+    'logout'
 ])->name('logout');
 
 Route::post('/login', [

@@ -10,8 +10,17 @@
       <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Dashboard</a>
         <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200 text-highlight">Devices</a>
       <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Reports</a>
-      <a href="{{ route('logout') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Logout</a>
-    </nav>
+
+      <!-- In your layout or nav component -->
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
+
+<a href="{{ route('logout') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200"
+ onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+ Logout
+</a>
+  </nav>
   </aside>
 
   <!-- Main Content -->
