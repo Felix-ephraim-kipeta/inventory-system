@@ -10,7 +10,7 @@
       <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Dashboard</a>
         <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200 text-highlight">Devices</a>
       <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Reports</a>
-      <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Logout</a>
+      <a href="{{ route('logout') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Logout</a>
     </nav>
   </aside>
 
