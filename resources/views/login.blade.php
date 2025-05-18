@@ -7,6 +7,7 @@
   
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6" action="#" method="POST">
+        @csrf
         <div>
           <label for="email" class="block text-sm/6 font-medium text-textlight">Email address</label>
           <div class="mt-2">

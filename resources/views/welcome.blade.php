@@ -4,13 +4,13 @@
   <!-- Sidebar -->
   <aside class="w-64 bg-sidebar text-textlight border-r border-brand">
     <div class="h-16 flex items-center justify-center border-b border-gray-800">
-      <span class="text-xl font-semibold">My Dashboard</span>
+      <span class="text-xl font-semibold">Dashboard</span>
     </div>
     <nav class="flex flex-col p-4 space-y-2">
-      <a href="#" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Dashboard</a>
-        <a href="#" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200 text-highlight">Devices</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Reports</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Logout</a>
+      <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Dashboard</a>
+        <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200 text-highlight">Devices</a>
+      <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Reports</a>
+      <a href="{{ route('device') }}" class="flex items-center p-2 rounded hover:bg-[#ef3b2d] text-sm transition-colors duration-200">Logout</a>
     </nav>
   </aside>
 
