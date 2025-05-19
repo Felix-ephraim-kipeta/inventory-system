@@ -5,7 +5,7 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/',[
+Route::get('/dashboard',[
     DashboardController::class, 
     'index'
 ])->name('dashboard');
@@ -14,7 +14,7 @@ Route::get('/devices', function () {
     return view('devices');
 })->name('device');
 
-Route::get('/login', [
+Route::get('/', [
     AuthController::class, 
     'indexLogin'
 ])->name('show.login');
@@ -29,7 +29,7 @@ Route::post('/logout', [
     'logout'
 ])->name('logout');
 
-Route::post('/login', [
+Route::post('/', [
     AuthController::class, 
     'login'
 ])->name('login');
