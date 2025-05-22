@@ -1,3 +1,4 @@
+<x-header/>
 <div>
     <div class="px-4 sm:px-0">
       <h3 class="text-base/7 font-semibold text-gray-900">Applicant Information</h3>
