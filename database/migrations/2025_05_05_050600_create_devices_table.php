@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('category');
+            $table->string('brand');
             $table->string('identifier')->unique();
             $table->unsignedBigInteger('state_id'); //FK device_state.id
             $table->foreign('state_id')->references('id')->on('device_states')->onDelete('cascade');
