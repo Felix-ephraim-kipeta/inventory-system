@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,3 +39,7 @@ Route::post('/register', [
     AuthController::class, 
     'register'
 ])->name('register');
+
+Route::get('/reports', [ReportController::class, 'index'])->name('reports');
+Route::get('/reports/pdf', [ReportController::class, 'exportPdf'])->name('reports.pdf');
+Route::get('/reports/excel', [ReportController::class, 'exportExcel'])->name('reports.excel');

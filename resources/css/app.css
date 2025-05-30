@@ -1,2 +1,32 @@
 @import "tailwindcss";
 @source "../views";
+
+/* Dropdown styling */
+.dropdown-open {
+    display: block !important;
+}
+[id$="Dropdown"], #dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    min-width: 10rem;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Prevent dropdowns from breaking table layout */
+td, th { white-space: nowrap; position: relative; }
+
+/* Modal styling (if needed) */
+.modal, [id$="Modal"] {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+.flex { display: flex !important; }
+.hidden { display: none !important; }
